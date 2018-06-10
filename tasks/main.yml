@@ -23,7 +23,7 @@
 
 - name: Link dotfiles into home folder.
   file:
-    src: "{{ dotfiles_repo_local_destination }}/{{ item }}"
+    src: "{{ dotfiles_repo_local_destination }}/{{ansible_os_family}}/{{ item }}"
     dest: "{{ dotfiles_home }}/{{ item }}"
     state: link
   become: no
